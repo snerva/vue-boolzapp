@@ -54,7 +54,7 @@ body{
 
 .user_topbar,
 .chat_topbar{
-    background-color: var(--bz-bck-topbar);
+    background-color: var(--bz-bck-active-chat);
 }
 .user_actions .fa-solid,
 .search .fa-solid{
@@ -86,12 +86,13 @@ body{
     height: 60px;
     object-fit: cover;
 }
-.active{
-    background-color: var(--bz-bck-active-chat);
-}
 .chat_contents{
     height: calc(100% - 132px);
     background-image: url(/assets/img/mine.jpg);
+}
+.message{
+    width: 312px;
+    background-color: white;
 }
 .write_input{
     height: 50px;
