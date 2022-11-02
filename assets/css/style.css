@@ -12,6 +12,7 @@
     --bz-bck-bottom: #E9EBEB;
     --bz-bck-active-chat: #EAEAEA;
     --bz-bck-write-mex: #F3EEEA;
+    --bz-bck-user-icons: #b1b1b1;
 }
 
 body{
@@ -37,4 +38,18 @@ body{
 .current_chat{
     background-color: beige;
     height: 920px;
+}
+
+/*region chat*/
+.chat img{
+    height: 50px;
+    object-fit: cover;
+    margin: 0.5rem;
+}
+.user_topbar{
+    background-color: var(--bz-bck-topbar);
+}
+.user_actions .fa-solid{
+    margin: 0 0.5rem;
+    color: var(--bz-bck-user-icons);
 }
