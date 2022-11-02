@@ -47,7 +47,7 @@
 
                     <div class="chat_list">
                         <div class="single_chat d-flex justify-content-between border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts">
-                            <div class="interlocutor_info d-flex">
+                            <div class="interlocutor_info d-flex" @click="changeChat(index)">
                                 <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                <div class="interlocutor_text mx-2 ">
                                   <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
@@ -63,7 +63,7 @@
                         <div class="active_chat_img d-flex">
                             <img class="img-fluid rounded-circle" :src="'./assets/img/avatar' + contacts[0].avatar + '.jpg'" alt="">
                             <div class="active_chat_info mx-2 align-self-end ">
-                                <h6 class="fw-semibold text-black m-0">{{contacts[0].name}}</h6>
+                                <h6 class="fw-semibold text-black m-0">{{contacts[activeMessage].name}}</h6>
                                 <p class="lh-sm"><small>Ultimo accesso oggi alle 12:00</small></p>
                             </div>
                         </div>
@@ -75,9 +75,11 @@
                     </div>
 
                     <div class="chat_contents p-5">
-                        <div class="message d-flex justify-content-between rounded-3 mx-5 my-2">
-                            <p class="m-3 text-black">Bla bla</p>
-                            <small class="align-self-end px-1">00:00</small>
+                        <div class="chat_row" v-for="(mex, index) in contacts[activeMessage].messages" :class="mex.status === 'sent' ? 'chat_received' : 'chat_row'">
+                            <div class="message d-flex justify-content-between rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" >
+                                <p class="m-3 text-black">{{mex.message}}</p>
+                                <small class="align-self-end px-1">00:00</small>
+                            </div>
                         </div>
                     </div>
 

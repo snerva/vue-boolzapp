@@ -90,9 +90,18 @@ body{
     height: calc(100% - 132px);
     background-image: url(/assets/img/mine.jpg);
 }
+.chat_received{
+    display: flex;
+    justify-content: end;
+}
 .message{
     width: 312px;
+    background-color: var(--bz-bck-user-mex);
+    float: right;
+}
+.msg_received{
     background-color: white;
+    float: none;
 }
 .write_input{
     height: 50px;
