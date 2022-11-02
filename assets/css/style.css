@@ -13,11 +13,12 @@
     --bz-bck-active-chat: #EAEAEA;
     --bz-bck-write-mex: #F3EEEA;
     --bz-bck-user-icons: #b1b1b1;
+    --bz-bck-search: #fafafa;
 }
 
 body{
     background: var(--bz-bck-bottom);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .top{
@@ -50,11 +51,8 @@ body{
 .user_topbar{
     background-color: var(--bz-bck-topbar);
 }
-.user_actions{
-    margin: 0 1rem;
-}
-.user_actions .fa-solid{
-    margin: 0 0.5rem;
+.user_actions .fa-solid,
+.search .fa-solid{
     color: var(--bz-bck-user-icons);
 }
 .alerts{
@@ -67,4 +65,7 @@ body{
 }
 .alerts_icon .fa-solid{
     color: var(--bz-bck-notified);
+}
+.search{
+    background-color: var(--bz-bck-search);
 }
