@@ -49,16 +49,39 @@
                         <div class="single_chat d-flex justify-content-between border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts">
                             <div class="interlocutor_info d-flex">
                                 <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
-                               <div class="interlocutor_text mx-2">
-                                <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
-                                <p class="lh-sm"><small>Ultimo messaggio inviato</small></p>
+                               <div class="interlocutor_text mx-2 ">
+                                  <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
+                                  <p class="lh-sm"><small>Ultimo messaggio inviato</small></p>
                                </div>
                             </div>
                             <div class="msg_time"><small>12:00</small></div>
                         </div>
                     </div>
                 </div>
-                <div class="current_chat col-8"></div>
+                <div class="current_chat col-8">
+                    <div class="chat_topbar d-flex justify-content-between align-items-center border-start border-secondary border-opacity-25 position-sticky">
+                        <div class="active_chat_img d-flex">
+                            <img class="img-fluid rounded-circle" :src="'./assets/img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                            <div class="active_chat_info mx-2 align-self-end ">
+                                <h6 class="fw-semibold text-black m-0">{{contacts[0].name}}</h6>
+                                <p class="lh-sm"><small>Ultimo accesso oggi alle 12:00</small></p>
+                            </div>
+                        </div>
+                        <div class="user_actions mx-3">
+                            <i class="fa-solid fa-magnifying-glass fa-lg mx-2"></i>
+                            <i class="fa-solid fa-paperclip fa-lg mx-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg mx-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="chat_contents"></div>
+
+                    <div class="chat_user d-flex justify-content-around align-items-center ">
+                        <i class="fa-regular fa-face-smile fa-lg mx-3"></i>
+                        <input type="text" class="write_input form-control m-2" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone fa-lg mx-3"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -14,6 +14,7 @@
     --bz-bck-write-mex: #F3EEEA;
     --bz-bck-user-icons: #b1b1b1;
     --bz-bck-search: #fafafa;
+    --bz-icons-dark-color: #6B7376;
 }
 
 body{
@@ -44,13 +45,15 @@ body{
 }
 
 /*region chat*/
-.user_img img{
+.user_img img,
+.active_chat_img img{
     height: 50px;
     object-fit: cover;
     margin: 0.5rem;
 }
 
-.user_topbar{
+.user_topbar,
+.chat_topbar{
     background-color: var(--bz-bck-topbar);
 }
 .user_actions .fa-solid,
@@ -71,10 +74,31 @@ body{
 .search{
     background-color: var(--bz-bck-search);
 }
+.chat_list{
+    overflow-y: auto;
+    height: calc(100% - 204px);
+}
+.single_chat:hover{
+    cursor: pointer;
+    background-color: var(--bz-bck-active-chat);
+}
 .interlocutor_info img{
     height: 60px;
     object-fit: cover;
 }
 .active{
     background-color: var(--bz-bck-active-chat);
+}
+.chat_contents{
+    height: calc(100% - 132px);
+}
+.write_input{
+    height: 50px;
+    font-size: 14px;
+}
+.chat_user{
+    background-color: var(--bz-bck-write-mex);
+}
+.chat_user i{
+    color: var(--bz-icons-dark-color);
 }
