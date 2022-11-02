@@ -21,7 +21,7 @@
                     <div class="user_topbar d-flex justify-content-between align-items-center">
                         <div class="user_img">
                             <img class="img-fluid rounded-circle" src="./assets/img/avatar_io.jpg" alt="">
-                            <span class="fw-semibold">Sofia</span>
+                            <span class="fw-semibold text-black">Sofia</span>
                         </div>
                         <div class="user_actions mx-3">
                             <i class="fa-solid fa-circle-notch fa-lg mx-2"></i>
@@ -35,7 +35,7 @@
                             <i class="fa-solid fa-bell-slash fa-lg"></i>
                         </div>
                         <div class="alerts_text align-self-middle">
-                            <span class="fw-semibold">Ricevi notifiche di nuovi messaggi</span><br>
+                            <span class="fw-semibold text-black">Ricevi notifiche di nuovi messaggi</span><br>
                             <a href="#" class="text-decoration-underline text-secondary"><small>Attiva notifiche desktop</small></a>
                         </div>
                     </div>
@@ -43,6 +43,19 @@
                     <div class="search input-group input-group-sm p-2">
                         <span class="input-group-text bg-white border border-end-0 border-opacity-10" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass my-2 mx-3"></i></span>
                         <input type="text" class="form-control border border-start-0 border-opacity-10" placeholder="Cerca o inizia una nuova chat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                    <div class="chat_list">
+                        <div class="single_chat d-flex justify-content-between border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts">
+                            <div class="interlocutor_info d-flex">
+                                <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                               <div class="interlocutor_text mx-2">
+                                <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
+                                <p class="lh-sm"><small>Ultimo messaggio inviato</small></p>
+                               </div>
+                            </div>
+                            <div class="msg_time"><small>12:00</small></div>
+                        </div>
                     </div>
                 </div>
                 <div class="current_chat col-8"></div>

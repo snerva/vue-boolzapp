@@ -19,6 +19,7 @@
 body{
     background: var(--bz-bck-bottom);
     font-family: 'Open Sans', sans-serif;
+    color: var(--bz-bck-user-icons);
 }
 
 .top{
@@ -43,11 +44,12 @@ body{
 }
 
 /*region chat*/
-.chat img{
+.user_img img{
     height: 50px;
     object-fit: cover;
     margin: 0.5rem;
 }
+
 .user_topbar{
     background-color: var(--bz-bck-topbar);
 }
@@ -68,4 +70,11 @@ body{
 }
 .search{
     background-color: var(--bz-bck-search);
+}
+.interlocutor_info img{
+    height: 60px;
+    object-fit: cover;
+}
+.active{
+    background-color: var(--bz-bck-active-chat);
 }
