@@ -91,6 +91,7 @@ body{
 }
 .chat_contents{
     height: calc(100% - 132px);
+    background-image: url(/assets/img/mine.jpg);
 }
 .write_input{
     height: 50px;
