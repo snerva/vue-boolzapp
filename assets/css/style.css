@@ -3,3 +3,38 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --bz-bck-top: #009688;
+    --bz-bck-notified: #8EDAFC;
+    --bz-bck-user-mex: #D5F9BA;
+    --bz-bck-topbar: #DCDBD2;
+    --bz-bck-bottom: #E9EBEB;
+    --bz-bck-active-chat: #EAEAEA;
+    --bz-bck-write-mex: #F3EEEA;
+}
+
+body{
+    background: var(--bz-bck-bottom);
+}
+
+.top{
+    background-color: var(--bz-bck-top);
+    width: 100%;
+    height: 145px;
+}
+
+.container{
+    max-width: 1535px;
+    height: 920px;
+    margin: 2rem auto;
+}
+
+.chat{
+    background-color: white;
+    height: 920px;
+}
+.current_chat{
+    background-color: beige;
+    height: 920px;
+}
