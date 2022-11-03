@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="top"></div>
+        <div class="container position-absolute top-0 start-50 translate-middle-x">
+            <div class="area_app d-flex ">
+                <div class="chat col-4">
+                    <div class="user_topbar d-flex justify-content-between align-items-center">
+                        <div class="user_img">
+                            <img class="img-fluid rounded-circle" src="./assets/img/avatar_io.jpg" alt="">
+                            <span class="fw-semibold text-black">Sofia</span>
+                        </div>
+                        <div class="user_actions mx-3">
+                            <i class="fa-solid fa-circle-notch fa-lg mx-2"></i>
+                            <i class="fa-solid fa-message fa-lg mx-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg mx-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="alerts d-flex align-items-center">
+                        <div class="alerts_icon bg-white rounded-circle d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-bell-slash fa-lg"></i>
+                        </div>
+                        <div class="alerts_text align-self-middle">
+                            <span class="fw-semibold text-black">Ricevi notifiche di nuovi messaggi</span><br>
+                            <a href="#" class="text-decoration-underline text-secondary"><small>Attiva notifiche desktop</small></a>
+                        </div>
+                    </div>
+
+                    <div class="search input-group input-group-sm p-2">
+                        <span class="input-group-text bg-white border border-end-0 border-opacity-10" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass my-2 mx-3"></i></span>
+                        <input type="text" class="form-control border border-start-0 border-opacity-10" placeholder="Cerca o inizia una nuova chat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                    <div class="chat_list">
+                        <div class="single_chat d-flex justify-content-between border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts">
+                            <div class="interlocutor_info d-flex" @click="changeChat(index)">
+                                <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
+                               <div class="interlocutor_text mx-2 ">
+                                  <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
+                                  <p class="lh-sm"><small>Ultimo messaggio inviato</small></p>
+                               </div>
+                            </div>
+                            <div class="msg_time"><small>12:00</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="current_chat col-8">
+                    <div class="chat_topbar d-flex justify-content-between align-items-center border-start border-secondary border-opacity-25 position-sticky">
+                        <div class="active_chat_img d-flex">
+                            <img class="img-fluid rounded-circle" :src="'./assets/img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                            <div class="active_chat_info mx-2 align-self-end ">
+                                <h6 class="fw-semibold text-black m-0">{{contacts[activeMessage].name}}</h6>
+                                <p class="lh-sm"><small>Ultimo accesso oggi alle 12:00</small></p>
+                            </div>
+                        </div>
+                        <div class="user_actions mx-3">
+                            <i class="fa-solid fa-magnifying-glass fa-lg mx-2"></i>
+                            <i class="fa-solid fa-paperclip fa-lg mx-2"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-lg mx-2"></i>
+                        </div>
+                    </div>
+
+                    <div class="chat_contents p-5">
+                        <div class="chat_row" v-for="(mex, index) in contacts[activeMessage].messages" :class="mex.status === 'sent' ? 'chat_received' : 'chat_row'">
+                            <div class="message d-flex justify-content-between rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" >
+                                <p class="m-3 text-black">{{mex.message}}</p>
+                                <small class="align-self-end px-1">00:00</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat_user d-flex justify-content-around align-items-center border-start border-secondary border-opacity-25">
+                        <i class="fa-regular fa-face-smile fa-lg mx-3"></i>
+                        <input type="text" class="write_input form-control m-2" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone fa-lg mx-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -88,7 +88,7 @@ body{
 }
 .chat_contents{
     height: calc(100% - 132px);
-    background-image: url(/milestone_1_2/assets/img/mine.jpg);
+    background-image: url(/milestone_3/assets/img/mine.jpg);
 }
 .chat_received{
     display: flex;
