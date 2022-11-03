@@ -184,6 +184,10 @@ createApp({
             //console.log('click su enter');
             //console.log(this.newSentMsg);
             this.contacts[activeMessage].messages.push({message: this.newSentMsg, status: 'sent'});
+            setTimeout(() => {
+                this.contacts[activeMessage].messages.push({message: 'OK!!!', status: 'received'});
+            }, 1000);
+            this.newSentMsg = '';
         }
     }
 }).mount('#app');
