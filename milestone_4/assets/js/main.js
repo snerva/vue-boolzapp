@@ -1,7 +1,8 @@
 /*Milestone 4
-Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
-contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 */
+//inserire evento per input
+
 
 const {createApp} = Vue 
 
@@ -10,6 +11,7 @@ createApp({
         return{
             activeMessage: 0,
             newSentMsg: '',
+            searchText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -187,6 +189,11 @@ createApp({
                 this.contacts[activeMessage].messages.push({message: 'OK!!!', status: 'received'});
             }, 1000);
             this.newSentMsg = '';
+        },
+        searchContact(){
+            //console.log('click su enter');
+            console.log(this.searchText);
+
         }
     }
 }).mount('#app');

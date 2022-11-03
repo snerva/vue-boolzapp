@@ -42,7 +42,7 @@
 
                     <div class="search input-group input-group-sm p-2">
                         <span class="input-group-text bg-white border border-end-0 border-opacity-10" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass my-2 mx-3"></i></span>
-                        <input type="text" class="form-control border border-start-0 border-opacity-10" placeholder="Cerca o inizia una nuova chat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <input type="text" class="form-control border border-start-0 border-opacity-10" placeholder="Cerca o inizia una nuova chat" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="searchText" @keyup.enter="searchContact">
                     </div>
 
                     <div class="chat_list">
