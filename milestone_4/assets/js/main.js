@@ -193,6 +193,7 @@ createApp({
         searchContact(){
             //console.log('click su enter');
             console.log(this.searchText);
+            
 
         }
     }
