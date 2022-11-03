@@ -10,6 +10,7 @@ createApp({
     data(){
         return{
             activeMessage: 0,
+            newSentMsg: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -178,6 +179,11 @@ createApp({
     methods: {
         changeChat(index){
             this.activeMessage = index
+        },
+        sentMsg(activeMessage){
+            //console.log('click su enter');
+            //console.log(this.newSentMsg);
+            this.contacts[activeMessage].messages.push({message: this.newSentMsg, status: 'sent'});
         }
     }
 }).mount('#app');
