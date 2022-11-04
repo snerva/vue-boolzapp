@@ -12,7 +12,6 @@ createApp({
             activeMessage: 0,
             newSentMsg: '',
             searchText: '',
-            showChat: true,
             contacts: [
                 {
                     name: 'Michele',
@@ -194,7 +193,7 @@ createApp({
         searchContact(){
             //console.log('click su enter');
             console.log(this.searchText);
-            this.contacts.filter(contact => {
+            this.contacts.forEach(contact => {
                 if(contact.name.toLowerCase().includes(this.searchText.toLowerCase())){
                     console.log('contenuto');
                     contact.visible = true;
@@ -202,8 +201,7 @@ createApp({
                     //console.log('nope');
                     contact.visible = false;
                 }
-                
-            })
+            });
         }
     }
 }).mount('#app');
