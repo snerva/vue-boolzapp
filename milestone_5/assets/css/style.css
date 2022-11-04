@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bz-bck-top: #009688;
+    --bz-bck-notified: #8EDAFC;
+    --bz-bck-user-mex: #D5F9BA;
+    --bz-bck-topbar: #DCDBD2;
+    --bz-bck-bottom: #E9EBEB;
+    --bz-bck-active-chat: #EAEAEA;
+    --bz-bck-write-mex: #F3EEEA;
+    --bz-bck-user-icons: #b1b1b1;
+    --bz-bck-search: #fafafa;
+    --bz-icons-dark-color: #6B7376;
+}
+
+body{
+    background: linear-gradient( var(--bz-bck-top) 0, var(--bz-bck-top) 140px, var(--bz-bck-bottom) 140px, var(--bz-bck-bottom) 100%);
+    background-repeat:initial;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--bz-bck-user-icons);
+}
+
+.container{
+    max-width: 1535px;
+    height: 920px;
+    margin: 2rem auto;
+}
+
+.chat{
+    background-color: white;
+    height: 920px;
+}
+.current_chat{
+    background-color: beige;
+    height: 920px;
+}
+
+/*region chat*/
+.user_img img,
+.active_chat_img img{
+    height: 50px;
+    object-fit: cover;
+    margin: 0.5rem;
+}
+
+.user_topbar,
+.chat_topbar{
+    background-color: var(--bz-bck-active-chat);
+}
+.user_actions .fa-solid,
+.search .fa-solid{
+    color: var(--bz-bck-user-icons);
+}
+.alerts{
+    background-color: var(--bz-bck-notified);
+}
+.alerts_icon{
+    width: 50px;
+    height: 50px;
+    margin: 1rem;
+}
+.alerts_icon .fa-solid{
+    color: var(--bz-bck-notified);
+}
+.search{
+    background-color: var(--bz-bck-search);
+}
+.chat_list{
+    overflow-y: scroll;
+    height: calc(100% - 204px);
+}
+.single_chat:hover{
+    cursor: pointer;
+    background-color: var(--bz-bck-active-chat);
+}
+.interlocutor_info img{
+    height: 60px;
+    object-fit: cover;
+}
+.chat_contents{
+    height: calc(100% - 132px);
+    background-image: url(/milestone_3/assets/img/mine.jpg);
+    overflow-y: scroll;
+}
+.single_chat{
+    display: flex;
+    justify-content: space-between;
+}
+.active_chat_img{
+    display: flex;
+}
+.chat_received{
+    display: flex;
+    justify-content: end;
+}
+.message{
+    display: flex;
+    justify-content: space-between;
+    width: 312px;
+    background-color: var(--bz-bck-user-mex);
+    float: right;
+}
+.msg_received{
+    background-color: white;
+    float: none;
+}
+.write_input{
+    height: 50px;
+    font-size: 14px;
+}
+.chat_user{
+    background-color: var(--bz-bck-write-mex);
+}
+.chat_user i{
+    color: var(--bz-icons-dark-color);
+}
