@@ -75,7 +75,7 @@ body{
     background-color: var(--bz-bck-search);
 }
 .chat_list{
-    overflow-y: auto;
+    overflow-y: scroll;
     height: calc(100% - 204px);
 }
 .single_chat:hover{
@@ -89,6 +89,7 @@ body{
 .chat_contents{
     height: calc(100% - 132px);
     background-image: url(/milestone_3/assets/img/mine.jpg);
+    overflow-y: scroll;
 }
 .chat_received{
     display: flex;
