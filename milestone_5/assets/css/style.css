@@ -19,7 +19,7 @@
 
 body{
     background: linear-gradient( var(--bz-bck-top) 0, var(--bz-bck-top) 140px, var(--bz-bck-bottom) 140px, var(--bz-bck-bottom) 100%);
-    background-repeat:initial;
+    background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     color: var(--bz-bck-user-icons);
 }
@@ -90,6 +90,10 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.chat_row{
+    display: inline-block;
+    position: relative;
+}
 .active_chat_img{
     display: flex;
 }
@@ -103,10 +107,25 @@ body{
     width: 312px;
     background-color: var(--bz-bck-user-mex);
     float: right;
+    cursor: pointer;
 }
 .msg_received{
     background-color: white;
     float: none;
+}
+.drop_options{
+    display: block;
+    position: absolute;
+    background-color: var(--bz-bck-topbar);
+    min-width: 160px;
+    z-index: 1;
+    bottom: 0.25rem;
+    right: 0.25rem;
+}
+.drop_options a{
+    text-decoration: none;
+    color: black;
+    padding: ;
 }
 .write_input{
     height: 50px;
