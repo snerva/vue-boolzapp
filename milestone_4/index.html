@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="chat_list">
-                        <div class="single_chat d-flex justify-content-between border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts" v-show="contact.visible">
+                        <div class="single_chat border-bottom border-opacity-10 p-2" v-for="(contact, index) in contacts" v-show="contact.visible">
                             <div class="interlocutor_info d-flex" @click="changeChat(index)">
                                 <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                <div class="interlocutor_text mx-2 ">

@@ -91,6 +91,10 @@ body{
     background-image: url(/milestone_3/assets/img/mine.jpg);
     overflow-y: scroll;
 }
+.single_chat{
+    display: flex;
+    justify-content: space-between;
+}
 .chat_received{
     display: flex;
     justify-content: end;
