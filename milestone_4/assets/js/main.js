@@ -12,6 +12,7 @@ createApp({
             activeMessage: 0,
             newSentMsg: '',
             searchText: '',
+            showChat: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -193,8 +194,16 @@ createApp({
         searchContact(){
             //console.log('click su enter');
             console.log(this.searchText);
-            
-
+            this.contacts.filter(contact => {
+                if(contact.name.toLowerCase().includes(this.searchText.toLowerCase())){
+                    //console.log('contenuto');
+                    contact.visible = true;
+                }else {
+                    //console.log('nope');
+                    contact.visible = false;
+                }
+                
+            })
         }
     }
 }).mount('#app');
