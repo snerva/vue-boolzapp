@@ -116,16 +116,21 @@ body{
 .drop_options{
     display: block;
     position: absolute;
-    background-color: var(--bz-bck-topbar);
+    background-color: var(--bz-bck-search);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     min-width: 160px;
     z-index: 1;
-    bottom: 0.25rem;
-    right: 0.25rem;
+    top: 3rem;
+    right: 3.75rem;
 }
 .drop_options a{
     text-decoration: none;
-    color: black;
-    padding: ;
+    color: var(--bz-icons-dark-color);
+}
+.op_info:hover,
+.op_delete:hover{
+    background-color: var(--bz-bck-active-chat);
+    cursor: pointer;
 }
 .write_input{
     height: 50px;

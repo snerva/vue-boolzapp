@@ -75,13 +75,18 @@
 
                     <div class="chat_contents p-5">
                         <div class="chat_row" v-for="(mex, index) in contacts[activeMessage].messages" :class="mex.status === 'sent' ? 'chat_received' : 'chat_row'">
-                            <div class="message rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" >
+                            <div class="message rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" @click="dropMenu">
                                 <p class="m-3 text-black">{{mex.message}}</p>
                                 <small class="align-self-end px-1">00:00</small>
                             </div>
-                            <div class="drop_options">
-                                <a class="op_info" href="">Message Info</a>
-                                <a class="op_delete" href="">Delete Message</a>
+                            <div class="drop_options" v-show="showDropMenu">
+                                <div class="op_info p-3">
+                                    <a href="">Message Info</a>
+                                </div>
+                                <div class="op_delete p-3" @click="deleteMsg(activeMessage, index)">
+                                    <a href="">Delete Message</a>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

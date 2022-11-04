@@ -13,6 +13,7 @@ createApp({
             activeMessage: 0,
             newSentMsg: '',
             searchText: '',
+            showDropMenu: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -204,6 +205,17 @@ createApp({
                 }
             });
             this.searchText = '';
+        },
+        dropMenu(){
+            //console.log('ho cliccato');
+            if(this.showDropMenu == false){
+                this.showDropMenu = true                
+            } else {
+                this.showDropMenu = false 
+            }
+        },
+        deleteMsg(activeMessage, index){
+            this.contacts[activeMessage].messages.splice(index, 1)
         }
     }
 }).mount('#app');
