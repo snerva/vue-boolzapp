@@ -50,10 +50,10 @@
                                 <img class="img-fluid rounded-circle mx-2" :src="'./assets/img/avatar' + contact.avatar + '.jpg'" alt="">
                                <div class="interlocutor_text mx-2 ">
                                   <h5 class="fw-semibold text-black m-0">{{contact.name}}</h5>
-                                  <p class="lh-sm"><small>Ultimo messaggio inviato</small></p>
+                                  <p v-if="contact.messages.length > 0" class="lh-sm"><small>{{contact.messages.slice(-1)[0].message}}</small></p>
                                </div>
                             </div>
-                            <div class="msg_time"><small>12:00</small></div>
+                            <div class="msg_time" v-if="contact.messages.length > 0"><small>{{contact.messages.slice(-1)[0].date}}</small></div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         <div class="chat_row" v-for="(mex, index) in contacts[activeMessage].messages" :class="mex.status === 'sent' ? 'chat_received' : 'chat_row'">
                             <div class="message rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" @click="dropMenu">
                                 <p class="m-3 text-black">{{mex.message}}</p>
-                                <small class="align-self-end px-1">00:00</small>
+                                <small class="align-self-end px-1">{{mex.date}}</small>
                             </div>
                             <div class="drop_options" v-show="showDropMenu">
                                 <div class="op_info p-3">
