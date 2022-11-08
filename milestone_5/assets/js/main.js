@@ -7,6 +7,7 @@ Visualizzazione ora e ultimo messaggio sent?received in chat list
 
 const {createApp} = Vue 
 
+const dt = luxon.DateTime
 createApp({
     data(){
         return{
@@ -186,9 +187,9 @@ createApp({
         sentMsg(activeMessage){
             //console.log('click su enter');
             //console.log(this.newSentMsg);
-            this.contacts[activeMessage].messages.push({message: this.newSentMsg, status: 'sent'});
+            this.contacts[activeMessage].messages.push({message: this.newSentMsg, status: 'sent', date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)});
             setTimeout(() => {
-                this.contacts[activeMessage].messages.push({message: 'OK!!!', status: 'received'});
+                this.contacts[activeMessage].messages.push({message: 'OK!!!', status: 'received', date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)});
             }, 1000);
             this.newSentMsg = '';
         },
