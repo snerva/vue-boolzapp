@@ -205,7 +205,7 @@ createApp({
                     contact.visible = false;
                 }
             });
-            this.searchText = '';
+            //this.searchText = '';
         },
         dropMenu(){
             //console.log('ho cliccato');

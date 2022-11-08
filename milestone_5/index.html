@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -75,9 +76,15 @@
 
                     <div class="chat_contents p-5">
                         <div class="chat_row" v-for="(mex, index) in contacts[activeMessage].messages" :class="mex.status === 'sent' ? 'chat_received' : 'chat_row'">
-                            <div class="message rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'" @click="dropMenu">
+                            <div class="message rounded-3 mx-5 my-2" :class="mex.status === 'sent' ? 'message' : 'msg_received'">
                                 <p class="m-3 text-black">{{mex.message}}</p>
-                                <small class="align-self-end px-1">{{mex.date}}</small>
+                                <div class="align-self-end">
+                                    <div class="drop_toggle text-center"  @click="dropMenu">
+                                        <i class="fa-solid fa-chevron-down fa-lg"></i>
+                                    </div>
+                                    <small class="px-1">{{mex.date}}</small>
+                                </div>
+                               
                             </div>
                             <div class="drop_options" v-show="showDropMenu">
                                 <div class="op_info p-3">
